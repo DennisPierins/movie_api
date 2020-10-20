@@ -5,7 +5,7 @@ const app = express();
 
 app.use(morgan("common"));
 
-app.use(express.static("public"));
+app.use("/documentation", express.static(__dirname + "/public"));
 
 let topMovies = [
   {
