@@ -106,12 +106,12 @@ app.get('/movies', (req, res) => {
  });
 
  // POST movie to user's list of favourite movies
-app.post('/users/:username/movies/:title', (res, req) =>{
+app.post('/users/:username/movies/:title', (req, res) =>{
   res.send('Succesful POST request adding movie ID: ' + req.params.title + 'to favourites list of user: ' + req.params.username);
 });
 
 // DELETE movie from user's list of favourite movies
-app.delete('/users/:username/movies/:title', (res, req) =>{
+app.delete('/users/:username/movies/:title', (req, res) =>{
   res.send('Succesful DELETE request removing movie ID: ' + req.params.title + 'from favourites list of user: ' + req.params.username);
 });
 
