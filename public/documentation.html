@@ -21,7 +21,7 @@
       </p>
     </section>
     <section>
-      <table>
+      <table border="1">
         <tr>
           <th>Business Logic</th>
           <th>URL</th>
@@ -38,7 +38,7 @@
           <td>None</td>
           <td>/movies</td>
           <td>A JSON object holding data about all the movies</td>
-          <td>{<br>"Title": "Pulp Fiction",<br>"Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",<br>"Genre": "Drama",<br>"Director": "Quentin Tarantino",<br>"Image": "pulpfiction.png",<br>"Featured": "Yes"<br>};<br>{...}</td>
+          <td>{<br>"Title": "Pulp Fiction",<br>"Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",<br>"Genre": {<br>"Name": "Drama",<br>"Description": "Drama film is a genre that relies on the emotional and relational development of realistic characters. While Drama film relies heavily on this kind of development, dramatic themes play a large role in the plot as well. Often, these dramatic themes are taken from intense, real life issues. Whether heroes or heroines are facing a conflict from the outside or a conflict within themselves, Drama film aims to tell an honest story of human struggles."<br>},<br>"Director": {<br>"Name": "Quentin Tarantino",<br>"Bio": "Quentin Jerome Tarantino is an American film director, screenwriter, producer, and actor. His films are characterized by nonlinear storylines, aestheticization of violence, extended scenes of dialogue, ensemble casts, references to popular culture and a wide variety of other films, soundtracks primarily containing songs and score pieces from the 1960s to the 1980s, alternate history, and features of neo-noir film.",<br>"Birth": "1963"<br>}, <br>"Image": "pulpfiction.png",<br>"Featured": true<br>};<br>{...}</td>
         </tr>
         <tr>
           <td>Get data about a single movie by title</td>
@@ -46,15 +46,15 @@
           <td>GET</td>
           <td>None</td>
           <td>/movies/pulp%20fiction</td>
-          <td>A JSON object holding data about a single movie, containing a description, genre, director, image URL, featured or not</td>
-          <td>{<br>"Title": "Pulp Fiction",<br>"Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",<br>"Genre": "Drama",<br>"Director": "Quentin Tarantino",<br>"Image": "pulpfiction.png",<br>"Featured": "Yes"<br>}</td>
+          <td>A JSON object holding data about a single movie, containing a description, genre (name and description), director (name, bio and birth), image URL, featured or not</td>
+          <td>{<br>"Title": "Pulp Fiction",<br>"Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",<br>"Genre": {<br>"Name": "Drama",<br>"Description": "Drama film is a genre that relies on the emotional and relational development of realistic characters. While Drama film relies heavily on this kind of development, dramatic themes play a large role in the plot as well. Often, these dramatic themes are taken from intense, real life issues. Whether heroes or heroines are facing a conflict from the outside or a conflict within themselves, Drama film aims to tell an honest story of human struggles."<br>},<br>"Director": {<br>"Name": "Quentin Tarantino",<br>"Bio": "Quentin Jerome Tarantino is an American film director, screenwriter, producer, and actor. His films are characterized by nonlinear storylines, aestheticization of violence, extended scenes of dialogue, ensemble casts, references to popular culture and a wide variety of other films, soundtracks primarily containing songs and score pieces from the 1960s to the 1980s, alternate history, and features of neo-noir film.",<br>"Birth": "1963"<br>}, <br>"Image": "pulpfiction.png",<br>"Featured": true<br>};
         </tr>
         <tr>
           <td>Get data about a genre by title</td>
-          <td>/movies/genres/:title</td>
+          <td>/movies/genres/:name</td>
           <td>GET</td>
           <td>None</td>
-          <td>/movies/genres/pulp%20fiction</td>
+          <td>/movies/genres/drama</td>
           <td>A JSON object holding data about a specific genre.</td>
           <td>{<br>"Genre": "Drama",<br>"Description": "Drama film is a genre that relies on the emotional and relational development of realistic characters. While Drama film relies heavily on this kind of development, dramatic themes play a large role in the plot as well. Often, these dramatic themes are taken from intense, real life issues. Whether heroes or heroines are facing a conflict from the outside or a conflict within themselves, Drama film aims to tell an honest story of human struggles."<br>}</td>
         </tr>
@@ -72,45 +72,45 @@
           <td>/users</td>
           <td>POST</td>
           <td>JSON</td>
-          <td>{<br>"Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com"<br>}</td>
-          <td>A JSON object holding the data about a specific user</td>
-          <td>{<br>"Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com"<br>}</td>
+          <td>{<br>"Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br>}</td>
+          <td>A JSON object holding all the data of a specific user</td>
+          <td>{<br>"FavoriteMovies": [],<br>"_id": "5fa11aeb64d44603f557c901",<br> "Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br>}</td>
         </tr>
         <tr>
           <td>Updating a user</td>
           <td>/users/:username</td>
           <td>PUT</td>
           <td>JSON</td>
-          <td>{<br>"Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com"<br>}</td>
-          <td>A text message indicating whether the user was succesfully updated</td>
-          <td>User dennispierins was succesfully updated
+          <td>{<br>"Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br>}</td>
+          <td>A JSON object holding all the data of a specific user</td>
+          <td>"FavoriteMovies": [],<br>"_id": "5fa11aeb64d44603f557c901",<br> "Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br>}
         </tr>
         <tr>
           <td>Allow users to add a movie to their favourites</td>
-          <td>/users/:username/movies/:title</td>
+          <td>/users/:username/movies/:MovieId</td>
           <td>POST</td>
           <td>JSON</td>
-          <td>/users/dennispierins/movies/pulp%20fiction</td>
-          <td>A text message indicating whether the favourite movie was succesfully added</td>
-          <td>Pulp Fiction was succesfully added to the favourite movie list of dennispierins</td>
+          <td>$push {"FavoriteMovies": "5f9d3bb10ccabf566cd0bcf1" }</td>
+          <td>A JSON object holding all the data of a specific user</td>
+          <td>"FavoriteMovies": [<br>"5f9d3bb10ccabf566cd0bcf1"<br>],<br>"_id": "5fa11aeb64d44603f557c901",<br> "Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br></td>
         </tr>
         <tr>
           <td>Allow users to remove a movie from their favourites</td>
           <td>/users/:username/movies/:title</td>
           <td>DELETE</td>
-          <td>None</td>
-          <td>/users/dennispierins/movies/pulp%20fiction</td>
-          <td>A text message indicating whether the favourite movie was succesfully deleted</td>
-          <td>Pulp Fiction has been succesfully removed from the favourite movie list of dennispierins</td>
+          <td>JSON</td>
+          <td>$pull {"FavoriteMovies": "5f9d3bb10ccabf566cd0bcf1" }</td>
+          <td>A JSON object holding all the data of a specific user</td>
+          <td>"FavoriteMovies": [],<br>"_id": "5fa11aeb64d44603f557c901",<br> "Username": "dennispierins",<br>"Password": "Snireip159",<br>"Email": "dennispierins@hotmail.com",<br>"Birthday": "1989-04-25"<br>}</td>
         </tr>
         <tr>
           <td>Allow existing users to deregister</td>
           <td>/users/:username</td>
           <td>DELETE</td>
           <td>None</td>
-          <td>/users/dennispierins</td>
+          <td>/users/dennis4567</td>
           <td>A text message indicating whether the user was succesfully deregistered</td>
-          <td>User dennispierins was succesfully deregistered from myFlix</td>
+          <td>dennis4567 was deleted.</td>
       </table>
     </section>
   </body>
