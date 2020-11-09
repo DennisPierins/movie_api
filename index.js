@@ -109,6 +109,7 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
     }
 
    let hashedPassword = Users.hashPassword(req.body.Password);
+   
    Users.findOne({ Username: req.body.Username })
      .then((user) => {
        if (user) {
@@ -149,7 +150,9 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
      return res.status(422).json({ errors: errors.array() });
    }
 
-  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+   let hashedPassword = Users.hashPassword(req.body.Password);
+
+   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
       Username: req.body.Username,
       Password: req.body.Password,
