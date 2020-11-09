@@ -10,7 +10,8 @@ const mongoose = require('mongoose');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
 
@@ -108,6 +109,7 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
     }
 
    let hashedPassword = Users.hashPassword(req.body.Password);
+   
    Users.findOne({ Username: req.body.Username })
      .then((user) => {
        if (user) {
@@ -148,7 +150,9 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
      return res.status(422).json({ errors: errors.array() });
    }
 
-  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+   let hashedPassword = Users.hashPassword(req.body.Password);
+
+   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
       Username: req.body.Username,
       Password: req.body.Password,
