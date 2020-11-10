@@ -10,8 +10,8 @@ const mongoose = require('mongoose');
 const Movies = Models.Movie;
 const Users = Models.User;
 
-mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true })
-  .catch(error => handleError(error));
+mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
+  //.catch(error => handleError(error));
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
@@ -224,6 +224,8 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something went wrong!");
 });
+
+//app.listen(8080, () => console.log("Your app is listening on port 8080."));
 
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0',() => {
