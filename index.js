@@ -106,7 +106,7 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
     let errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: errors.array() });
+      return res.status(422).send("Error: Your username needs to contain a minimum of five non alphanumeric characters")
     }
 
    let hashedPassword = Users.hashPassword(req.body.Password);
