@@ -26,6 +26,8 @@ let auth = require('./auth')(app);
 
 app.use(cors());
 
+let allowedOrigins = ['*'];
+
 const { check, validationResult } = require('express-validator');
 
 // GET homepage
