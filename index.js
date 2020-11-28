@@ -26,7 +26,7 @@ let auth = require('./auth')(app);
 
 app.use(cors());
 
-let allowedOrigins = ['*'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://themyflixapi.herokuapp.com/' ];
 
 const { check, validationResult } = require('express-validator');
 
