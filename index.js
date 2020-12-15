@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 app.use(bodyParser.json());
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://themyflixapi.herokuapp.com'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://themyflixapi.herokuapp.com', 'https://myflixmoviedb.netlify.app'];
 
 const { check, validationResult } = require('express-validator');
 
@@ -160,7 +160,7 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
      res.status(500).send('Error: ' + err);
    });
  });
- 
+
  // PUT user information
  app.put('/users/:Username',
  [
