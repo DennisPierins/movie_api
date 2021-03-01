@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 app.use(bodyParser.json());
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'http://localhost:4200', 'https://themyflixapi.herokuapp.com', 'https://myflixmoviedb.netlify.app'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'http://localhost:4200', 'https://themyflixapi.herokuapp.com', 'https://myflixmoviedb.netlify.app', 'https://dennispierins.github.io'];
 
 const { check, validationResult } = require('express-validator');
 
