@@ -29,4 +29,3 @@ https://themyflixapi.herokuapp.com/
 ## Documentation
 
 * JSDoc documentation can be found in the "out" directory
-* The request-response info can be found in the documentation.html file
