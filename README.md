@@ -13,6 +13,15 @@ movie_api is a server-side component of a "movies" web application. It provides 
 * Includes user authentication and authorization
 * Deployed to Heroku
 
+## API endpoints
+
+A complete list of the API endpoints can be found in the documentation.html file within the public folder.
+
+Example: 
+![APIendpoints](https://github.com/DennisPierins/movie_api/blob/main/public/movie_api-screenshot.PNG)
+
+You can test the endpoints using [Postman](https://www.postman.com/), an API client to create, share, test and document APIs.
+
 ## URL
 
 https://themyflixapi.herokuapp.com/ 
