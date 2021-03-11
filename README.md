@@ -15,7 +15,7 @@ movie_api is a server-side component of a "movies" web application. It provides 
 
 ## API endpoints
 
-A complete list of the API endpoints can be found here: [APIendpoints](https://themyflixapi.herokuapp.com/documentation.html).
+A complete list of the API endpoints can be found [here](https://themyflixapi.herokuapp.com/documentation.html).
 
 Example: 
 ![APIendpoints](https://github.com/DennisPierins/movie_api/blob/main/public/movie_api-screenshot.PNG)
