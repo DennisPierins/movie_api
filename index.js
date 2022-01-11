@@ -46,7 +46,7 @@ let allowedOrigins = [
   "http://localhost:4200",
   "https://themyflixapi.herokuapp.com",
   "https://myflixmoviedb.netlify.app",
-  "https://myflixv2.netlify.app/"
+  "https://myflixv2.netlify.app/",
   "https://dennispierins.github.io",
 ];
 
